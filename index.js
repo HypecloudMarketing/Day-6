@@ -33,12 +33,12 @@ const calculator = (num1, num2, operator) => {
         case "*":
             return num1 * num2;
         case "/":
-            if (num2 === 0) {
-                return "Error: Cannot divide by zero";
+            if (num2 === 0) {       
+                return "Loi: Khong the chia cho 0";
             }
             return num1 / num2;
         default:
-            return "Error: Invalid operator";
+            return "Loi: Operator khong hop le";
     }
 };
 
@@ -47,4 +47,3 @@ console.log(calculator(10, 5, "-"));
 console.log(calculator(10, 5, "*")); 
 console.log(calculator(10, 5, "/")); 
 console.log(calculator(10, 0, "/"));
-console.log(calculator(10, 5, "^")); 
