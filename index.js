@@ -23,33 +23,28 @@
 // let canhHuyen = calculatePytago(canhGocVuong1, canhGocVuong2);
 // console.log("Canh huyen la:", canhHuyen);
 
-function calculator(num1, num2, operator) {
-    let result;
+
+const calculator = (num1, num2, operator) => {
     switch (operator) {
         case "+":
-            result = num1 + num2;
-            break;
+            return num1 + num2;
         case "-":
-            result = num1 - num2;
-            break;
+            return num1 - num2;
         case "*":
-            result = num1 * num2;
-            break;
+            return num1 * num2;
         case "/":
-            if (num2 !== 0) {
-                result = num1 / num2;
-            } else {
-                result = "Lỗi: Không thể chia cho 0";
+            if (num2 === 0) {
+                return "Error: Cannot divide by zero";
             }
-            break;
+            return num1 / num2;
         default:
-            result = "Lỗi: Phép toán không hợp lệ";
+            return "Error: Invalid operator";
     }
-    return result;
-}
+};
 
-let num1 = 10;
-let num2 = 5;
-let operator = "+";
-let calculationResult = calculator(num1, num2, operator);
-console.log(`Kết quả của ${num1} ${operator} ${num2} là:`, calculationResult);
+console.log(calculator(10, 5, "+"));
+console.log(calculator(10, 5, "-")); 
+console.log(calculator(10, 5, "*")); 
+console.log(calculator(10, 5, "/")); 
+console.log(calculator(10, 0, "/"));
+console.log(calculator(10, 5, "^")); 
